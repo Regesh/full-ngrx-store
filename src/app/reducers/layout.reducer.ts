@@ -16,17 +16,17 @@ export function reducer(
 ): State {
   switch (action.type) {
     case LayoutActionTypes.CloseSidenav:
-      return {
+      return Object.assign({},state,{
         showSidenav: false,
-      };
+      });
       case LayoutActionTypes.OpenSidenavSuccess:
       return Object.assign({},state,{
           layoutData:action.payload
       });
     case LayoutActionTypes.OpenSidenav:
-      return {
+      return Object.assign({},state,{
         showSidenav: true,
-      };
+      });
 
     default:
       return state;
